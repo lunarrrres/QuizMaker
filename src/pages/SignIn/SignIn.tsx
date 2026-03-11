@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { signIn } from "../../redux/authSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const SignIn: React.FC = () => {
@@ -78,6 +78,9 @@ const SignIn: React.FC = () => {
           {loading ? "Signing in..." : "Sign In"}
         </button>
       </form>
+      <div style={{ marginTop: 15 }}>
+        <Link to="/signup">Sign Up</Link>
+      </div>
     </div>
   );
 };

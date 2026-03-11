@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/hooks/store";
 import SignIn from "./pages/SignIn/SignIn";
 import Main from "./pages/MainPage/MainPage";
+import SignUp from "./pages/SignUp/SignUp";
 import { useAppSelector } from "./redux/hooks/hooks";
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -18,6 +19,8 @@ const ProtectedRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
 const AppRoutes: React.FC = () => (
   <Routes>
     <Route path="/signin" element={<SignIn />} />
+    <Route path="/signup" element={<SignUp />} />
+
     <Route
       path="/"
       element={
