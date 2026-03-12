@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { signIn } from "../../redux/authSlice";
 import { useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
+import "./style.css";
 
 const SignIn: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -30,38 +31,30 @@ const SignIn: React.FC = () => {
   }, [user, navigate]);
 
   return (
-    <div
-      style={{
-        maxWidth: "400px",
-        margin: "50px auto",
-        padding: "20px",
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-      }}
-    >
-      <h2>Sign In</h2>
+    <div className="signin-container">
+      <h2 className="signin-title">ВХІД</h2>
       <form onSubmit={formik.handleSubmit}>
         <div style={{ marginBottom: "15px" }}>
-          <label>Email</label>
           <input
+            className="signin-input"
             type="email"
             name="email"
+            placeholder="e-mail"
             onChange={formik.handleChange}
             value={formik.values.email}
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}
           />
           {formik.errors.email && formik.touched.email && (
             <div style={{ color: "red" }}>{formik.errors.email}</div>
           )}
         </div>
         <div style={{ marginBottom: "15px" }}>
-          <label>Password</label>
           <input
+            className="signin-input"
             type="password"
             name="password"
+            placeholder="пароль"
             onChange={formik.handleChange}
             value={formik.values.password}
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}
           />
           {formik.errors.password && formik.touched.password && (
             <div style={{ color: "red" }}>{formik.errors.password}</div>
@@ -71,15 +64,16 @@ const SignIn: React.FC = () => {
           <div style={{ color: "red", marginBottom: "10px" }}>{error}</div>
         )}
         <button
+          className="signin-button"
           type="submit"
           disabled={loading}
           style={{ padding: "10px 20px" }}
         >
-          {loading ? "Signing in..." : "Sign In"}
+          {loading ? "Завантаження..." : "УВІЙТИ"}
         </button>
       </form>
-      <div style={{ marginTop: 15 }}>
-        <Link to="/signup">Sign Up</Link>
+      <div className="signup-link">
+        <Link to="/signup">Зареєструватися</Link>
       </div>
     </div>
   );

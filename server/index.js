@@ -7,7 +7,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const users = [
-  { email: "test@example.com", password: "123456", token: "fake-jwt-token" },
+  {
+    email: "test@example.com",
+    password: "123456",
+    token: "fake-jwt-token",
+    username: "testuser",
+  },
 ];
 
 app.post("/api/auth/signin", (req, res) => {

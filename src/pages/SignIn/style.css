@@ -1,0 +1,86 @@
+/* Загальний фон сторінки */
+body {
+  margin: 0;
+  font-family: "Sofia Sans", sans-serif;
+  background-color: #427a76;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Контейнер форми */
+.signin-container {
+  background-color: #f5e5e1; /* світлий блок */
+  padding: 40px 30px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1243px;
+  height: 612px;
+}
+
+/* Заголовок */
+.signin-title {
+  font-size: 64px;
+  font-weight: 1000;
+  margin-bottom: 20px;
+  color: #174143; /* темно-зелений текст */
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Поля введення */
+.signin-input {
+  width: 641px;
+  height: 89px;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 5px solid #174143; /* темно-зелена рамка */
+  border-radius: 20px;
+  font-size: 40px;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Sofia Sans", sans-serif;
+  background-color: #f9ece8;
+  color: #174143;
+}
+
+/* Кнопка увійти */
+.signin-button {
+  width: 432px;
+  height: 89px;
+  padding: 12px;
+  background-color: #427a76;
+  color: #f9ece8;
+  font-weight: 1000;
+  font-size: 64px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.2s ease;
+  font-family: "Sofia Sans", sans-serif;
+}
+
+.signin-button:hover {
+  background-color: #174143;
+}
+
+/* Кнопка Зареєструватися (як текст) */
+.signup-link a {
+  color: #427a76;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: 1000;
+  font-family: "Sofia Sans", sans-serif;
+}
+
+.signup-link a:hover {
+  color: #174143;
+}

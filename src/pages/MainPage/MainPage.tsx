@@ -12,7 +12,7 @@ const Main: React.FC = () => {
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>Welcome, {user?.email}!</h1>
+      <h1>Welcome, {user?.username}!</h1>
       <button onClick={handleSignOut} style={{ padding: "8px 16px" }}>
         Sign Out
       </button>

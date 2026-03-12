@@ -3,7 +3,7 @@ import axios from "axios";
 import api from "../api/axios";
 
 interface AuthState {
-  user: null | { email: string; token: string };
+  user: null | { email: string; token: string; username?: string };
   loading: boolean;
   error: null | string;
 }

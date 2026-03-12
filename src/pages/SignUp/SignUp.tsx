@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import api from "../../api/axios";
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 
 const SignUp: React.FC = () => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const SignUp: React.FC = () => {
     onSubmit: async (values) => {
       try {
         await api.post("/api/auth/signup", values);
-        navigate("/signin");
+        navigate("/");
       } catch {
         setError("Registration failed");
       }
@@ -27,14 +28,15 @@ const SignUp: React.FC = () => {
   });
 
   return (
-    <div style={{ maxWidth: 400, margin: "50px auto" }}>
-      <h2>Sign Up</h2>
+    <div className="signup-container">
+      <h2 className="signup-title">ЗАРЕЄСТРУВАТИСЯ</h2>
 
       <form onSubmit={formik.handleSubmit}>
         <div>
-          <label>Username</label>
           <input
+            className="signup-input"
             name="username"
+            placeholder="логін"
             onChange={formik.handleChange}
             value={formik.values.username}
           />
@@ -44,36 +46,29 @@ const SignUp: React.FC = () => {
         </div>
 
         <div>
-          <label>Email</label>
           <input
             name="email"
+            className="signup-input"
+            placeholder="e-mail"
             onChange={formik.handleChange}
             value={formik.values.email}
           />
         </div>
 
-        <div>
-          <label>Password</label>
-
+        <div className="password-wrapper">
           <input
             type={showPassword ? "text" : "password"}
             name="password"
+            placeholder="пароль"
+            className="signup-input"
             onChange={formik.handleChange}
             value={formik.values.password}
           />
 
           <button
+            className="show-password-button"
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            style={{
-              position: "absolute",
-              right: 10,
-              top: 32,
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              fontSize: 16,
-            }}
           >
             {showPassword ? "🙈" : "👁"}
           </button>
@@ -85,8 +80,12 @@ const SignUp: React.FC = () => {
 
         {error && <div style={{ color: "red" }}>{error}</div>}
 
-        <button type="submit" style={{ marginTop: 10 }}>
-          Sign Up
+        <button
+          type="submit"
+          className="signup-button"
+          style={{ marginTop: 10 }}
+        >
+          ВПЕРЕД
         </button>
       </form>
     </div>
