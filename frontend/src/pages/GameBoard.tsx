@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useAtom, useAtomValue } from 'jotai';
+import { useAtom } from 'jotai';
 import { activeQuizAtom, usedQuestionsAtom, playersAtom } from '@/atoms/game.atoms';
 import { Card, CardContent } from '@/components/ui/card';
 import { Scoreboard } from '@/components/Scoreboard';

@@ -1,7 +1,7 @@
 import { useAtomValue, useSetAtom } from 'jotai';
 import { playersAtom, resetGameAtom } from '@/atoms/game.atoms';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
 
 export function FinalScreen() {

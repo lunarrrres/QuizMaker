@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useSetAtom } from 'jotai';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { quizApi } from '@/api/quiz.api';
 import { activeQuizAtom, resetGameAtom, playersAtom } from '@/atoms/game.atoms';
 import { Button } from '@/components/ui/button';
