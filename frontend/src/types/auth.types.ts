@@ -1,6 +1,8 @@
 export interface User {
   id: string;
   email: string;
+  name?: string;
+  avatarUrl?: string;
 }
 
 export interface AuthResponse {
@@ -16,5 +18,7 @@ export interface LoginDto {
 
 export interface RegisterDto {
   email: string;
+  name: string;
   password: string;
+  passwordConfirmation: string;
 }

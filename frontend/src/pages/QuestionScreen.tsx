@@ -35,8 +35,9 @@ export function QuestionScreen() {
 
   const finishQuestion = () => {
     setUsedQuestions((prev) => {
-      if (prev.includes(`${catIdx}-${qIdx}`)) return prev;
-      return [...prev, `${catIdx}-${qIdx}`];
+      const prevArr = Array.isArray(prev) ? prev : [];
+      if (prevArr.includes(`${catIdx}-${qIdx}`)) return prevArr;
+      return [...prevArr, `${catIdx}-${qIdx}`];
     });
     // Скидаємо статус гравців перед виходом
     setPlayers(players.map(p => ({ ...p, hasResponded: false })));

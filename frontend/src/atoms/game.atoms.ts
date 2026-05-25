@@ -2,7 +2,7 @@ import { atom } from 'jotai';
 import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 import type { Quiz } from '../types/quiz.types';
 
-const storage = createJSONStorage(() => sessionStorage);
+const storage = createJSONStorage<any>(() => sessionStorage);
 
 export interface Player {
   id: string;
